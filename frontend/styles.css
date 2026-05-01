@@ -1,0 +1,520 @@
+/* Resume Analyzer - Styles */
+
+/* CSS Variables */
+:root {
+    /* Colors */
+    --primary-color: #4a90d9;
+    --primary-dark: #357abd;
+    --primary-light: #e8f4fd;
+    --success-color: #34c759;
+    --success-light: #d4edda;
+    --error-color: #dc3545;
+    --error-light: #f8d7da;
+    --warning-color: #ffc107;
+    --warning-light: #fff3cd;
+    
+    /* Backgrounds */
+    --background-color: #f5f7fa;
+    --card-background: #ffffff;
+    --input-background: #fafafa;
+    
+    /* Text */
+    --text-dark: #333333;
+    --text-medium: #666666;
+    --text-light: #999999;
+    --text-white: #ffffff;
+    
+    /* Borders */
+    --border-color: #e0e0e0;
+    --border-focus: #4a90d9;
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+    
+    /* Spacing */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    
+    /* Border Radius */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --radius-full: 50px;
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: var(--background-color);
+    color: var(--text-dark);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+ /* Container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.header {
+    background: var(--card-background);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.header .logo {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+}
+
+.header-text h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-xs);
+}
+
+.header-text p {
+    color: var(--text-medium);
+    font-size: 14px;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+}
+
+/* Sections */
+.upload-section,
+.job-section,
+.results-section {
+    background: var(--card-background);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.upload-section h2,
+.job-section h2,
+.results-section h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+/* File Upload */
+.file-upload-container {
+    position: relative;
+}
+
+.file-upload-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-xl);
+    border: 2px dashed var(--border-color);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: var(--transition-normal);
+    background: var(--input-background);
+}
+
+.file-upload-label:hover {
+    border-color: var(--primary-color);
+    background: var(--primary-light);
+}
+
+.upload-icon {
+    font-size: 32px;
+    margin-bottom: var(--spacing-sm);
+}
+
+#fileName {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.file-hint {
+    font-size: 12px;
+    color: var(--text-light);
+    margin-top: var(--spacing-xs);
+}
+
+.file-input {
+    display: none;
+}
+
+/* Job Description */
+.job-input-container {
+    position: relative;
+}
+
+.job-textarea {
+    width: 100%;
+    min-height: 200px;
+    padding: var(--spacing-md);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    font-family: inherit;
+    line-height: 1.6;
+    resize: vertical;
+    transition: var(--transition-normal);
+    background: var(--input-background);
+}
+
+.job-textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background: var(--card-background);
+}
+
+.job-textarea::placeholder {
+    color: var(--text-light);
+}
+
+/* Button */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin: var(--spacing-lg) 0;
+}
+
+.analyze-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md) var(--spacing-xl);
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: var(--text-white);
+    border: none;
+    border-radius: var(--radius-full);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-normal);
+    box-shadow: var(--shadow-md);
+    min-width: 200px;
+}
+
+.analyze-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.analyze-button:active {
+    transform: translateY(0);
+}
+
+.analyze-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.button-text {
+    display: inline;
+}
+
+.button-icon {
+    font-size: 18px;
+}
+
+/* Loading Indicator */
+.loading-indicator {
+    text-align: center;
+    padding: var(--spacing-xl);
+}
+
+.loading-indicator.hidden {
+    display: none;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--border-color);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    margin: 0 auto var(--spacing-md);
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.loading-indicator p {
+    color: var(--text-medium);
+}
+
+/* Error Message */
+.error-message {
+    padding: var(--spacing-md);
+    background: var(--error-light);
+    color: #721c24;
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+    font-size: 14px;
+}
+
+.error-message.hidden {
+    display: none;
+}
+
+/* Results Section */
+.results-section.hidden {
+    display: none;
+}
+
+/* Match Percentage */
+.match-container {
+    margin-bottom: var(--spacing-lg);
+}
+
+.match-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.match-header h3 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.match-percentage {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.progress-bar {
+    height: 12px;
+    background: var(--border-color);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    margin-bottom: var(--spacing-sm);
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--primary-color), var(--success-color));
+    border-radius: var(--radius-full);
+    transition: width 0.5s ease;
+}
+
+.match-message {
+    color: var(--text-medium);
+    font-size: 14px;
+}
+
+/* Skills Container */
+.skills-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+@media (max-width: 600px) {
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.skills-box {
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+}
+
+.skills-box.matched {
+    background: var(--success-light);
+    border: 1px solid var(--success-color);
+}
+
+.skills-box.missing {
+    background: var(--error-light);
+    border: 1px solid var(--error-color);
+}
+
+.skills-box h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.matched h3 {
+    color: #155724;
+}
+
+.missing h3 {
+    color: #721c24;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+}
+
+.skill-tag {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.matched .skill-tag {
+    background: var(--success-color);
+    color: var(--text-white);
+}
+
+.missing .skill-tag {
+    background: var(--error-color);
+    color: var(--text-white);
+}
+
+/* Suggestions */
+.suggestions-box {
+    background: var(--primary-light);
+    border: 1px solid var(--primary-color);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+}
+
+.suggestions-box h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary-dark);
+    margin-bottom: var(--spacing-md);
+}
+
+.suggestions-list {
+    list-style: none;
+}
+
+.suggestions-list li {
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    font-size: 14px;
+    color: var(--text-dark);
+}
+
+.suggestions-list li:last-child {
+    border-bottom: none;
+}
+
+.suggestions-list li::before {
+    content: "💡";
+    flex-shrink: 0;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: var(--spacing-lg) 0;
+    color: var(--text-light);
+    font-size: 12px;
+}
+
+/* Utility Classes */
+.hidden {
+    display: none !important;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .container {
+        padding: var(--spacing-md);
+    }
+    
+    .header {
+        padding: var(--spacing-md);
+    }
+    
+    .header .logo {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+    
+    .header-text h1 {
+        font-size: 20px;
+    }
+    
+    .upload-section,
+    .job-section,
+    .results-section {
+        padding: var(--spacing-md);
+    }
+    
+    .job-textarea {
+        min-height: 150px;
+    }
+    
+    .analyze-button {
+        width: 100%;
+    }
+}

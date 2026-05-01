@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Analyzer - Check Your Resume Against Job Descriptions</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">📄</div>
+            <div class="header-text">
+                <h1>Resume Analyzer</h1>
+                <p>Check how well your resume matches job requirements</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Upload Section -->
+            <section class="upload-section">
+                <h2>1. Upload Your Resume</h2>
+                <div class="file-upload-container">
+                    <label for="resumeFile" class="file-upload-label">
+                        <div class="upload-icon">📎</div>
+                        <span id="fileName">Choose PDF file...</span>
+                        <span class="file-hint">Maximum file size: 16MB</span>
+                    </label>
+                    <input 
+                        type="file" 
+                        id="resumeFile" 
+                        accept=".pdf" 
+                        class="file-input"
+                    >
+                </div>
+            </section>
+
+            <!-- Job Description Section -->
+            <section class="job-section">
+                <h2>2. Enter Job Description</h2>
+                <div class="job-input-container">
+                    <label for="jobDescription" class="sr-only">Job Description</label>
+                    <textarea 
+                        id="jobDescription" 
+                        class="job-textarea"
+                        placeholder="Paste the job description here..."
+                    >Software Developer
+
+Requirements:
+- Python programming
+- JavaScript
+- HTML and CSS
+- React.js
+- Node.js
+- SQL databases
+
+Nice to have:
+- Docker
+- AWS
+- Git</textarea>
+                </div>
+            </section>
+
+            <!-- Analyze Button -->
+            <div class="button-container">
+                <button id="analyzeButton" class="analyze-button">
+                    <span class="button-text">Analyze Resume</span>
+                    <span class="button-icon">🔍</span>
+                </button>
+            </div>
+
+            <!-- Loading Indicator -->
+            <div id="loadingIndicator" class="loading-indicator hidden">
+                <div class="spinner"></div>
+                <p>Analyzing your resume...</p>
+            </div>
+
+            <!-- Error Message -->
+            <div id="errorMessage" class="error-message hidden"></div>
+
+            <!-- Results Section -->
+            <section id="resultsSection" class="results-section hidden">
+                <h2>Analysis Results</h2>
+                
+                <!-- Match Percentage -->
+                <div class="match-container">
+                    <div class="match-header">
+                        <h3>Match Percentage</h3>
+                        <span id="matchPercentage" class="match-percentage">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div id="progressFill" class="progress-fill"></div>
+                    </div>
+                    <p id="matchMessage" class="match-message"></p>
+                </div>
+
+                <!-- Skills Container -->
+                <div class="skills-container">
+                    <!-- Matched Skills -->
+                    <div class="skills-box matched">
+                        <h3>✅ Matched Skills</h3>
+                        <div id="matchedSkills" class="skills-list"></div>
+                    </div>
+
+                    <!-- Missing Skills -->
+                    <div class="skills-box missing">
+                        <h3>❌ Missing Skills</h3>
+                        <div id="missingSkills" class="skills-list"></div>
+                    </div>
+                </div>
+
+                <!-- Suggestions -->
+                <div class="suggestions-box">
+                    <h3>💡 Improvement Suggestions</h3>
+                    <ul id="suggestionsList" class="suggestions-list"></ul>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Resume Analyzer - Built with ❤️ for job seekers</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
