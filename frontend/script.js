@@ -9,10 +9,10 @@
 
 const CONFIG = {
     // Backend API URL
-    API_URL: 'http://localhost:5000/api/analyze',
+    API_URL: 'https://resume-analyzer-ssei.onrender.com/api/analyze',
     
     // Health check URL
-    HEALTH_URL: 'http://localhost:5000/api/health',
+    HEALTH_URL: 'https://resume-analyzer-ssei.onrender.com/api/health',
     
     // UI Settings
     MAX_FILE_SIZE: 16 * 1024 * 1024, // 16MB
