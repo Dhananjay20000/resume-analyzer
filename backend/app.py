@@ -1,4 +1,4 @@
-"""
+""" My First AI Resume Analyzer - Backend Code in Python Flask
 Resume Analyzer Backend - Python Flask REST API
 Analyzes resumes against job descriptions using keyword matching
 
